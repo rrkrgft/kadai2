@@ -7,5 +7,5 @@ class User < ApplicationRecord
   #モデルにアドレスを小文字にする処理を入れる
   has_secure_password
   #パスワードをハッシュ化する。事前にgem bcryptを追加
-
+  has_many :posts
 end
