@@ -26,4 +26,6 @@
     </tbody>
   </table>
 </div>
-<%= link_to "一覧画面へ", posts_path, class: "btn btn-primary" %>
+<%= link_to "編集" ,edit_post_path(@post.id) , class: "btn btn-primary" %>
+<%= link_to "削除", post_path(post.id), method: :delete, data: { confirm: "本当に削除していいですか？"},  class: "btn btn-primary" %>
+
