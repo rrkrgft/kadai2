@@ -13,10 +13,11 @@
         <td><%= post.title %></td>
         <td><%= post.text %></td>
         <td><%= post.user.name %></td>
+        <td><%= link_to "詳細",post_path(post.id) %>
       </tr>
     <% end %>
     </thead>
   </table>
 </div>
 
-<%= link_to '新規投稿へ', new_post_path, class: 'btn btn-primary' %>
+<%= link_to '新規投稿', new_post_path, class: 'btn btn-primary' %>
