@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      #投稿一覧画面に遷移 redirect_to
+      redirect_to posts_path
     else
       flash.now[:danger] = 'ログインに失敗しました'
       #nowを書くことで次の一回だけエラーを表示する。

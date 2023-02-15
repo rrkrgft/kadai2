@@ -14,8 +14,8 @@
         <td><%= link_to post.title,post_path(post.id) %></td>
         <td><%= post.text %></td>
         <td><%= post.user.name %></td>
-        <td><%= link_to "編集", edit_post_path(post.id), class: "btn btn-primary" %></td>
-        <td><%= link_to "削除", post_path(post.id), method: :delete, data: { confirm: "本当に削除していいですか？"} ,class: "btn btn-primary" %></td>
+        <td><%= link_to_if post.user.id == current_user.id ,"編集", edit_post_path(post.id), class: "btn btn-primary" %></td>
+        <td><%= link_to_if post.user.id == current_user.id , "削除", post_path(post.id), method: :delete, data: { confirm: "本当に削除していいですか？"} ,class: "btn btn-primary" %></td>
       </tr>
     <% end %>
     </thead>
