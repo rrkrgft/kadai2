@@ -1,3 +1,22 @@
 <h1>投稿一覧</h1>
 
-<>
+<div class="mb-3">
+  <table class="table table-hover">
+    <thead class="thead-default">
+      <tr>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>投稿者</th>
+      </tr>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.text %></td>
+        <td><%= post.user.name %></td>
+      </tr>
+    <% end %>
+    </thead>
+  </table>
+</div>
+
+<%= link_to '新規投稿へ', new_post_path, class: 'btn btn-primary' %>
